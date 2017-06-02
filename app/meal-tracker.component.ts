@@ -19,6 +19,10 @@ import { Meal } from './meal.model';
       <add-meal
         (newMealSender) = "addMeal($event)"
       ></add-meal>
+      <edit-meal
+        [childSelectedMeal] = "selectedMeal"
+        (doneClickedSender) = "finishedEditing()"
+      ></edit-meal>
   `
 })
 
@@ -38,6 +42,14 @@ export class MealTrackerComponent {
   onChange(caloriesOption){
     this.selectedCalories = caloriesOption;
     console.log(this.selectedCalories);
+  }
+
+  selectedMeal: Meal = null;
+  showDetails(clickedMeal: Meal) {
+    this.selectedMeal = clickedMeal;
+  }
+  finishedEditing() {
+    this.selectedMeal = null;
   }
 
 }

@@ -4,12 +4,10 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'add-meal',
   template: `
-    <label>Food Name:</label>
-    <input #foodName>
-    <label>Food Details:</label>
-    <input #foodDetails>
-    <label>Food Calories:</label>
-    <input #foodCalories>
+  <h3>Add New Meal</h3>
+    <input #foodName, placeholder="Meal Name">
+    <input #foodDetails, placeholder="Meal Details">
+    <input #foodCalories, placeholder="Meal Of Calories">
 
     <button
         (click) = "
