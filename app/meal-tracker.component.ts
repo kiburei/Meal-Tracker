@@ -6,10 +6,15 @@ import { Meal } from './meal.model';
   template: `
       <h1>Meal Tracker</h1>
       <h2>Today's Meals</h2>
-      <div *ngFor="let currentMeal of meals" >
+      <select (change) = "onChange($event.target.value)" >
+        <option value="all">Show All</option>
+        <option value="eatMuch">Food is Bae</option>
+        <option value="teamWaistLine">I do Yoga</option>
+      </select>
+      <div *ngFor="let currentMeal of meals | calories:selectedCalories " >
         {{currentMeal.name}}
         {{currentMeal.details}}
-        {{currentMeal.calories}}
+        {{currentMeal.calories}} Cal
       </div>
       <add-meal
         (newMealSender) = "addMeal($event)"
@@ -26,6 +31,13 @@ export class MealTrackerComponent {
 
   addMeal(newMeal: Meal) {
     this.meals.push(newMeal);
+  }
+
+  public selectedCalories: string = "all";
+
+  onChange(caloriesOption){
+    this.selectedCalories = caloriesOption;
+    console.log(this.selectedCalories);
   }
 
 }

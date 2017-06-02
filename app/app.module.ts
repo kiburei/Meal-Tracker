@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { MealTrackerComponent } from './meal-tracker.component';
 import { AddMealComponent } from './add-meal.component';
+import { CaloriesPipe } from './calories.pipe';
+
 
 @NgModule({
   imports: [
@@ -11,7 +13,8 @@ import { AddMealComponent } from './add-meal.component';
   ],
   declarations: [
     MealTrackerComponent,
-    AddMealComponent
+    AddMealComponent,
+    CaloriesPipe
   ],
   bootstrap: [MealTrackerComponent]
 })
