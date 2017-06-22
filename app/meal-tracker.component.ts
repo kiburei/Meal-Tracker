@@ -4,7 +4,9 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-tracker',
   template: `
-      <h1>Meal Tracker</h1>
+      <nav>
+        <h1>Meal Tracker</h1>
+      </nav>
       <h2>Today's Meals</h2>
       <select (change) = "onChange($event.target.value)" >
         <option value="all">Show All</option>
@@ -12,9 +14,11 @@ import { Meal } from './meal.model';
         <option value="teamWaistLine">I do Yoga</option>
       </select>
       <div *ngFor="let currentMeal of meals | calories:selectedCalories " >
-        {{currentMeal.name}}
-        {{currentMeal.details}}
-        {{currentMeal.calories}} Cal
+        <p class="flow-text">
+          {{currentMeal.name}}
+          {{currentMeal.details}}
+          {{currentMeal.calories}} Cal
+        </p>
       </div>
       <add-meal
         (newMealSender) = "addMeal($event)"

@@ -8,8 +8,8 @@ import { Meal } from './meal.model';
     <input #foodName, placeholder="Meal Name">
     <input #foodDetails, placeholder="Meal Details">
     <input #foodCalories, placeholder="Meal Of Calories">
-
-    <button
+    <button 
+        class="waves-effect waves-light btn"
         (click) = "
         addClicked(foodName.value, foodDetails.value, foodCalories.value);
         foodName.value = '';
