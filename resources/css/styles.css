@@ -1,0 +1,12 @@
+body {
+    padding: 10px;
+    background-image: url(/resources/images/textured_paper.png)
+}
+.nav-wrapper {
+    background-image: url(/resources/images/57046.jpg);
+    background-size: cover;
+}
+
+select {
+    width: 10%;
+}
